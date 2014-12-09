@@ -1,7 +1,7 @@
-FROM ubuntu:trusty
-MAINTAINER Jonathan Short <jonathan.short@sendgrid.com>
+FROM ubuntu:latest
+MAINTAINER Ivan Pedrazas <ipedrazas@gmail.com>
 
-RUN apt-get update && apt-get -y dist-upgrade
+RUN apt-get update && apt-get -y dist-upgrade && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 ADD run.sh /tmp/run.sh
 RUN chmod +x /tmp/run.sh
